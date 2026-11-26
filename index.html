@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Desk">
+<meta name="theme-color" content="#000000">
+<meta name="referrer" content="no-referrer">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="app.css">
+<title>Desk</title></head>
+<body>
+<div id="app">
+  <div id="views">
+    <section class="tabview on" id="v-home"></section>
+    <section class="tabview" id="v-bots"></section>
+    <section class="tabview" id="v-activity"></section>
+    <section class="tabview" id="v-account"></section>
+    <div class="stack" id="stack"></div>
+  </div>
+  <nav class="tabbar" id="tabbar" aria-label="Tabs"></nav>
+</div>
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog"></div>
+<div class="toast" id="toast" role="status"></div>
+<div class="full" id="full"><button class="x" aria-label="Close">Done</button><img alt="Live screen"><a class="of" target="_blank" rel="noopener" hidden>Open on FOMO</a></div>
+<div class="paste" id="paste">
+  <h1>Paste your desk link</h1>
+  <p>The link you got once in Telegram. It stays on this phone only.</p>
+  <input id="paste-in" placeholder="https://…#t=…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Paste your desk link">
+  <div id="paste-msg" class="errtxt" style="margin-top:8px;min-height:20px"></div>
+  <button id="paste-go">Open</button>
+</div>
+<script src="util.js"></script><script src="api.js"></script><script src="chart.js"></script><script src="odometer.js"></script><script src="app.js"></script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function(){});</script>
+</body></html>
